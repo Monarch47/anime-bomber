@@ -19,6 +19,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+        />
+      </head>
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
