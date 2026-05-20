@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "An anime-themed online word-bomb party game (T3 stack + custom WebSocket server).",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "tsx watch --clear-screen=false server.ts",
     "build": "next build",
