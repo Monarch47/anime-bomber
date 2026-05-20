@@ -1,0 +1,20 @@
+# Render blueprint for Anime Bomber.
+#
+# Free, card-free web service. Render injects the PORT env var and the custom
+# server reads it. WebSockets work on the same origin (/ws) automatically.
+#
+# NOTE: the game keeps every room in memory on a SINGLE instance, so do not
+# scale this service beyond 1 instance.
+
+services:
+  - type: web
+    name: anime-bomber
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production

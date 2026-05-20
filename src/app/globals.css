@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #090812;
+  --color-ink-soft: #110f20;
+  --color-panel: #1b1832;
+  --color-panel-soft: #272244;
+  --color-line: #3b3560;
+  --color-neon-pink: #ff3ea5;
+  --color-neon-cyan: #2fe6ff;
+  --color-neon-purple: #a673ff;
+  --color-neon-gold: #ffd24a;
+  --color-neon-mint: #4dffac;
+  --color-neon-red: #ff5168;
+  --font-display: "Russo One", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background:
+    radial-gradient(1100px 560px at 12% -8%, #301f54 0%, transparent 60%),
+    radial-gradient(900px 520px at 112% 4%, #3d1142 0%, transparent 55%),
+    #090812;
+  background-attachment: fixed;
+  color: #ece9ff;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px currentColor, 0 0 28px currentColor;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff3ea5, #a673ff);
+  color: #fff;
+  box-shadow: 0 8px 30px -8px rgba(255, 62, 165, 0.7);
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.09);
+}
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #3b3560;
+  border-radius: 99px;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  15% { transform: translateX(-9px) rotate(-5deg); }
+  30% { transform: translateX(8px) rotate(4deg); }
+  45% { transform: translateX(-7px) rotate(-3deg); }
+  60% { transform: translateX(6px) rotate(3deg); }
+  80% { transform: translateX(-3px) rotate(-1deg); }
+}
+.anim-shake {
+  animation: shake 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0.7); opacity: 0; }
+  70% { transform: scale(1.06); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.anim-pop {
+  animation: pop-in 0.28s ease-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+.anim-float {
+  animation: float 3.4s ease-in-out infinite;
+}
+
+@keyframes toast-in {
+  0% { transform: translateY(16px) scale(0.9); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+.anim-toast {
+  animation: toast-in 0.25s ease-out;
+}
+
+@keyframes burst {
+  0% { transform: scale(0.3); opacity: 1; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+.anim-burst {
+  animation: burst 0.6s ease-out forwards;
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.anim-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
