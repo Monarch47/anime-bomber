@@ -12,7 +12,10 @@ services:
     runtime: node
     plan: free
     region: singapore
-    buildCommand: npm install && npm run build
+    # NODE_ENV=production is set below, which makes `npm install` skip
+    # devDependencies. `--include=dev` forces them in so `next build` has
+    # tailwind/postcss/typescript available at build time.
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm start
     healthCheckPath: /
     envVars:
